@@ -6,6 +6,8 @@ import Order from "./components/Order";
 import Reviews from "./components/Reviews";
 import Info from "./components/Info";
 import { Footer, CookieBanner } from "./components/Footer";
+import { CartProvider } from "./cart/CartContext";
+import CartDrawer from "./cart/CartDrawer";
 import { restaurant, hours, pizzas } from "./data/menu";
 import "./App.css";
 
@@ -79,7 +81,7 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <CartProvider>
       <Navbar />
       <main>
         <Hero />
@@ -89,7 +91,8 @@ export default function App() {
         <Info />
       </main>
       <Footer />
+      <CartDrawer />
       <CookieBanner />
-    </>
+    </CartProvider>
   );
 }

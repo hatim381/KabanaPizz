@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { pizzas, drinks, tagLabels, restaurant } from "../data/menu";
 import { useReveal } from "../utils/useReveal";
+import { useCart } from "../cart/CartContext";
 
 const filters = [
   { key: "all", label: "Toutes" },
@@ -17,6 +18,7 @@ function formatPrice(p) {
 export default function Menu() {
   const [filter, setFilter] = useState("all");
   const [ref, visible] = useReveal();
+  const { add } = useCart();
 
   const shown =
     filter === "all" ? pizzas : pizzas.filter((p) => p.tags.includes(filter));
@@ -71,6 +73,13 @@ export default function Menu() {
                     </span>
                   ))}
               </div>
+              <button
+                className="pizza__add"
+                onClick={() => add({ id: p.id, name: p.name, price: p.price })}
+                aria-label={`Ajouter ${p.name} au panier`}
+              >
+                Ajouter · {formatPrice(p.price)}
+              </button>
             </article>
           ))}
         </div>
@@ -78,11 +87,18 @@ export default function Menu() {
         <div className="drinks">
           <h3 className="drinks__title">Boissons</h3>
           <ul className="drinks__list">
-            {drinks.map((d) => (
+            {drinks.map((d, idx) => (
               <li key={d.name}>
                 <span>{d.name}</span>
                 <span className="drinks__dots" aria-hidden="true" />
                 <strong>{formatPrice(d.price)}</strong>
+                <button
+                  className="drinks__add"
+                  onClick={() => add({ id: `drink-${idx}`, name: d.name, price: d.price })}
+                  aria-label={`Ajouter ${d.name} au panier`}
+                >
+                  +
+                </button>
               </li>
             ))}
           </ul>

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { restaurant } from "../data/menu";
 import { getOpenStatus } from "../utils/hours";
+import { useCart } from "../cart/CartContext";
 
 export default function Navbar() {
   const [status, setStatus] = useState(getOpenStatus());
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { count, toggleCart } = useCart();
 
   useEffect(() => {
     const t = setInterval(() => setStatus(getOpenStatus()), 60000);
@@ -58,8 +60,16 @@ export default function Navbar() {
             {status.label}
           </span>
           <a href={`tel:${restaurant.phoneRaw}`} className="btn btn-primary nav__cta">
-            Commander
+            Appeler
           </a>
+          <button
+            className="nav__cart"
+            onClick={toggleCart}
+            aria-label={`Ouvrir le panier${count > 0 ? `, ${count} article${count > 1 ? "s" : ""}` : ""}`}
+          >
+            <span className="nav__cart-icon" aria-hidden="true">🛒</span>
+            {count > 0 && <span className="nav__cart-badge">{count}</span>}
+          </button>
           <button
             className="nav__burger"
             aria-label="Ouvrir le menu"

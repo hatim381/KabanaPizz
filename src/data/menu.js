@@ -18,6 +18,9 @@ export const restaurant = {
   },
   phone: "07 71 73 61 15",
   phoneRaw: "0771736115",
+  // Numéro WhatsApp qui reçoit les commandes (format international, sans + ni espaces)
+  // 33 = France, puis le numéro sans le 0 initial.
+  whatsapp: "33618362121",
   phoneBackup: "06 59 51 76 67",
   phoneBackupRaw: "0659517667",
   uberEats:
