@@ -29,7 +29,7 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="wrap nav__inner">
         <a href="#top" className="nav__brand" aria-label="Kabana Pizz, accueil">
-          <span className="nav__flame" aria-hidden="true">🔥</span>
+          <img src={restaurant.logo} alt="" className="nav__logo" aria-hidden="true" />
           <span className="nav__name">
             Kabana<span className="nav__name-accent"> Pizz</span>
           </span>

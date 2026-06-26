@@ -7,6 +7,9 @@ export const restaurant = {
   tagline: "La pizza de la cabane, cuite au feu",
   description:
     "Pizzas artisanales, légumes frais coupés du jour, pâte travaillée à la main. Délicieux et pas cher.",
+  // Images — déposez les fichiers dans /public et gardez ces chemins
+  logo: "/logo.png",
+  heroImage: "/hero.jpg",
   address: {
     street: "14 rue Général Leclerc",
     city: "Brie-Comte-Robert",

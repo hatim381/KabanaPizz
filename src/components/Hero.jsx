@@ -6,16 +6,14 @@ export default function Hero() {
 
   return (
     <section className="hero" id="top">
+      <h1 className="sr-only">
+        Kabana Pizz — pizzas artisanales à Brie-Comte-Robert
+      </h1>
       <div className="hero__glow" aria-hidden="true" />
       <div className="wrap hero__inner">
         <div className="hero__content">
           <span className="eyebrow">Kiosque à pizza · Brie-Comte-Robert</span>
-          <h1 className="hero__title">
-            La pizza<br />
-            de la <span className="hero__accent">cabane</span>,<br />
-            cuite au feu.
-          </h1>
-          <p className="hero__lead">{restaurant.description}</p>
+          <p className="hero__lead hero__lead--lg">{restaurant.description}</p>
 
           <div className="hero__actions">
             <a href={`tel:${restaurant.phoneRaw}`} className="btn btn-primary">
@@ -35,12 +33,17 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero__card" aria-hidden="true">
-          <div className="hero__pizza">
-            <div className="hero__pizza-glow" />
-            <span className="hero__pizza-emoji">🍕</span>
+        <div className="hero__card">
+          <div className="hero__photo">
+            <div className="hero__pizza-glow" aria-hidden="true" />
+            <img
+              src={restaurant.heroImage}
+              alt="Pizza de Kabana Pizz tout juste sortie du four"
+              className="hero__img"
+              loading="eager"
+            />
           </div>
-          <div className="hero__price-tag">
+          <div className="hero__price-tag" aria-hidden="true">
             <span>dès</span>
             <strong>9,50 €</strong>
           </div>

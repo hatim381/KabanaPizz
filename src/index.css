@@ -163,3 +163,16 @@ section {
 }
 
 .reveal.is-visible { opacity: 1; transform: none; }
+
+/* Accessibilité : titre lu par les lecteurs d'écran, invisible à l'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
