@@ -7,19 +7,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --charcoal: #1a1411;
-  --charcoal-2: #241c17;
-  --bark: #3a2c22;
-  --cream: #f4ead9;
-  --cream-dim: #c9b89f;
-  --ember: #e8541e;
-  --ember-glow: #ff7a3d;
-  --honey: #f2a83c;
-  --leaf: #7a9b54;
+  /* Palette chaude et appétissante : terracotta, ocre, beige, blanc cassé. */
+  --charcoal: #fdf8f0;
+  --charcoal-2: #faf0e1;
+  --bark: #e6d2b0;
+  --cream: #2c1810;
+  --cream-dim: #6b5645;
+  --ember: #c1502c;
+  --ember-glow: #973a1d;
+  --honey: #b8762a;
+  --leaf: #4f7a2e;
 
   --radius: 14px;
   --radius-lg: 24px;
-  --shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.7);
+  --shadow: 0 18px 50px -20px rgba(43, 24, 16, 0.22);
   --maxw: 1140px;
 
   --font-display: "Fraunces", Georgia, serif;

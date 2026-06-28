@@ -42,6 +42,31 @@ function PizzaMedia({ pizza }) {
   );
 }
 
+// Photo générique pour accompagnement / boisson, avec repli si absente.
+function ExtraMedia({ item, fallback, badge }) {
+  const [error, setError] = useState(false);
+  const showImg = item.image && !error;
+
+  return (
+    <div className="extra__media">
+      {showImg ? (
+        <img
+          src={item.image}
+          alt={item.name}
+          className="extra__img"
+          loading="lazy"
+          onError={() => setError(true)}
+        />
+      ) : (
+        <div className="extra__media-fallback" aria-hidden="true">
+          <span>{fallback}</span>
+        </div>
+      )}
+      {badge}
+    </div>
+  );
+}
+
 // Carte pizza avec choix de la taille (32 cm / 40 cm).
 function PizzaCard({ pizza }) {
   const { add } = useCart();
@@ -147,7 +172,11 @@ export default function Menu() {
         </div>
 
         <div className="formule">
-          <div className="formule__tag">Midi &amp; soir</div>
+          <ExtraMedia
+            item={formule}
+            fallback="🥪"
+            badge={<span className="formule__tag">Midi &amp; soir</span>}
+          />
           <div className="formule__body">
             <h3 className="formule__name">{formule.name}</h3>
             <p className="formule__desc">{formule.description}</p>
@@ -165,44 +194,48 @@ export default function Menu() {
         </div>
 
         <div className="extras">
-          <div className="drinks">
+          <div className="extras__block">
             <h3 className="drinks__title">Accompagnements</h3>
-            <ul className="drinks__list">
+            <div className="extra__grid">
               {sides.map((s) => (
-                <li key={s.id}>
-                  <span>{s.name}</span>
-                  <span className="drinks__dots" aria-hidden="true" />
-                  <strong>{formatPrice(s.price)}</strong>
+                <article key={s.id} className="extra">
+                  <ExtraMedia item={s} fallback="🍟" />
+                  <div className="extra__body">
+                    <span className="extra__name">{s.name}</span>
+                    <strong className="extra__price">{formatPrice(s.price)}</strong>
+                  </div>
                   <button
-                    className="drinks__add"
+                    className="extra__add"
                     onClick={() => add({ id: `side-${s.id}`, name: s.name, price: s.price })}
                     aria-label={`Ajouter ${s.name} au panier`}
                   >
-                    +
+                    Ajouter
                   </button>
-                </li>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className="drinks">
+          <div className="extras__block">
             <h3 className="drinks__title">Boissons</h3>
-            <ul className="drinks__list">
-              {drinks.map((d, idx) => (
-                <li key={d.name}>
-                  <span>{d.name}</span>
-                  <span className="drinks__dots" aria-hidden="true" />
-                  <strong>{formatPrice(d.price)}</strong>
+            <div className="extra__grid">
+              {drinks.map((d) => (
+                <article key={d.id} className="extra">
+                  <ExtraMedia item={d} fallback="🥤" />
+                  <div className="extra__body">
+                    <span className="extra__name">{d.name}</span>
+                    <strong className="extra__price">{formatPrice(d.price)}</strong>
+                  </div>
                   <button
-                    className="drinks__add"
-                    onClick={() => add({ id: `drink-${idx}`, name: d.name, price: d.price })}
+                    className="extra__add"
+                    onClick={() => add({ id: `drink-${d.id}`, name: d.name, price: d.price })}
                     aria-label={`Ajouter ${d.name} au panier`}
                   >
-                    +
+                    Ajouter
                   </button>
-                </li>
+                </article>
               ))}
-            </ul>
+            </div>
             <p className="drinks__note">
               Pains, suppléments et autres : demandez-nous au comptoir ou par téléphone.
             </p>

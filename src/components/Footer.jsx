@@ -34,9 +34,7 @@ export function Footer() {
       </div>
       <div className="wrap footer__bottom">
         <span>© 2016–{new Date().getFullYear()} Kabana Pizz</span>
-        <a href="https://www.kabanapizz.fr/mentions-legales/" target="_blank" rel="noreferrer">
-          Mentions légales
-        </a>
+        <a href="/mentions-legales">Mentions légales</a>
       </div>
     </footer>
   );

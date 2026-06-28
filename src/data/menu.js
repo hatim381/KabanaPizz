@@ -36,13 +36,13 @@ export const restaurant = {
 // Horaires — facilement modifiables. 0 = dimanche … 6 = samedi
 // (source : flyer officiel. Jours fériés : 18h00–22h00, non géré ici.)
 export const hours = [
-  { day: "Lundi", index: 1, open: "18:30", close: "21:30", open2: null, close2: null },
-  { day: "Mardi", index: 2, open: "11:30", close: "13:45", open2: "18:30", close2: "21:30" },
-  { day: "Mercredi", index: 3, open: "11:30", close: "13:45", open2: "18:30", close2: "21:30" },
-  { day: "Jeudi", index: 4, open: "11:30", close: "13:45", open2: "18:30", close2: "21:30" },
-  { day: "Vendredi", index: 5, open: "11:30", close: "13:45", open2: "18:30", close2: "21:30" },
-  { day: "Samedi", index: 6, open: "11:30", close: "13:45", open2: "18:30", close2: "21:30" },
-  { day: "Dimanche", index: 0, open: "18:30", close: "21:30", open2: null, close2: null },
+  { day: "Lundi", index: 1, open: "18:30", close: "21:45", open2: null, close2: null },
+  { day: "Mardi", index: 2, open: "11:30", close: "13:45", open2: "18:30", close2: "21:45" },
+  { day: "Mercredi", index: 3, open: "11:30", close: "13:45", open2: "18:30", close2: "21:45" },
+  { day: "Jeudi", index: 4, open: "11:30", close: "13:45", open2: "18:30", close2: "21:45" },
+  { day: "Vendredi", index: 5, open: "11:30", close: "13:45", open2: "18:30", close2: "21:45" },
+  { day: "Samedi", index: 6, open: "11:45", close: "13:45", open2: "18:30", close2: "21:45" },
+  { day: "Dimanche", index: 0, open: "18:15", close: "21:45", open2: null, close2: null },
 ];
 
 // Toutes les pizzas sont au même tarif, selon la taille (cf. flyer).
@@ -253,12 +253,13 @@ export const pizzas = [
 ];
 
 // Accompagnements — prix unique TTC.
+// Photos : déposez un fichier nommé d'après l'`id` dans public/sides/.
 export const sides = [
-  { id: "cheesy-bread", name: "Cheesy bread", price: 5 },
-  { id: "chicken-wings", name: "Chicken wings (6 pièces)", price: 5 },
-  { id: "chickeninos", name: "Chickeninos (6 pièces)", price: 5 },
-  { id: "potatoes", name: "Potatoes (300 g)", price: 5 },
-  { id: "brownie", name: "Brownie chocolat", price: 2 },
+  { id: "cheesy-bread", name: "Cheesy bread", price: 5, image: "/sides/cheesy-bread.jpg" },
+  { id: "chicken-wings", name: "Chicken wings (6 pièces)", price: 5, image: "/sides/chicken-wings.jpg" },
+  { id: "chickeninos", name: "Chickeninos (6 pièces)", price: 5, image: "/sides/chickeninos.jpg" },
+  { id: "potatoes", name: "Potatoes (300 g)", price: 5, image: "/sides/potatoes.jpg" },
+  { id: "brownie", name: "Brownie chocolat", price: 2, image: "/sides/brownie.jpg" },
 ];
 
 // Formule du midi et du soir.
@@ -269,13 +270,30 @@ export const formule = {
   description:
     "Sandwich + frites + boisson 33 cl au choix (sauf bière) + une sauce (fromagère, algérienne, samouraï, burger).",
   availability: "Midi et soir",
+  image: "/formule/kabanito.jpg",
 };
 
+// Catalogue boissons aligné sur la carte Uber Eats officielle.
+// Photos : déposez un fichier nommé d'après l'`id` dans public/drinks/.
 export const drinks = [
-  { name: "Canette 33 cl (Coca, Fanta…)", price: 1.5 },
-  { name: "Red Bull 25 cl", price: 2.5 },
-  { name: "Soda / Tropico / Lipton Ice Tea (1,25 ou 1,5 L)", price: 3.0 },
-  { name: "Oasis 2 L", price: 3.5 },
+  { id: "coca-cola-33", name: "Coca-Cola 33 cl", price: 3.5, image: "/drinks/coca-cola-33.jpg" },
+  { id: "coca-cola-125", name: "Coca-Cola 1,25 L", price: 5.0, image: "/drinks/coca-cola-125.jpg" },
+  { id: "coca-cherry-33", name: "Coca-Cola Cherry 33 cl", price: 3.5, image: "/drinks/coca-cherry-33.png" },
+  { id: "coca-zero-33", name: "Coca Zero 33 cl", price: 3.5, image: "/drinks/coca-zero-33.jpg" },
+  { id: "coca-zero-125", name: "Coca-Cola Zero 1,25 L", price: 5.0, image: "/drinks/coca-zero-125.png" },
+  { id: "fanta-125", name: "Fanta 1,25 L", price: 5.0, image: "/drinks/fanta-125.jpg" },
+  { id: "oasis-tropical-33", name: "Oasis Tropical 33 cl", price: 3.5, image: "/drinks/oasis-tropical-33.jpg" },
+  { id: "oasis-tropical-2l", name: "Oasis Tropical 2 L", price: 6.0, image: "/drinks/oasis-tropical-2l.jpg" },
+  { id: "oasis-cassis-33", name: "Oasis Cassis 33 cl", price: 3.5, image: "/drinks/oasis-cassis-33.jpg" },
+  { id: "orangina-33", name: "Orangina 33 cl", price: 3.5, image: "/drinks/orangina-33.jpg" },
+  { id: "perrier-33", name: "Perrier 33 cl", price: 3.5, image: "/drinks/perrier-33.jpg" },
+  { id: "canada-dry-33", name: "Canada Dry 33 cl", price: 3.5, image: "/drinks/canada-dry-33.jpg" },
+  { id: "tropico-33", name: "Tropico 33 cl", price: 3.5, image: "/drinks/tropico-33.jpg" },
+  { id: "ice-tea-33", name: "Ice Tea 33 cl", price: 3.5, image: "/drinks/ice-tea-33.jpg" },
+  { id: "lipton-ice-tea-125", name: "Lipton Ice Tea 1,25 L", price: 4.5, image: "/drinks/lipton-ice-tea-125.jpg" },
+  { id: "redbull-25", name: "Red Bull 25 cl", price: 4.5, image: "/drinks/redbull-25.jpg" },
+  { id: "eau-50", name: "Eau 50 cl", price: 1.5, image: "/drinks/eau-50.jpg" },
+  { id: "eau-plate-150", name: "Eau plate 1,5 L", price: 2.5, image: "/drinks/eau-plate-150.jpg" },
 ];
 
 export const reviews = [
