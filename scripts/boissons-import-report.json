@@ -1,0 +1,127 @@
+[
+  {
+    "id": "coca-cola-33",
+    "name": "Coca-Cola 33 cl",
+    "source": "https://www.valgourmand.com/910-coca-cola-boite-33cl-ref-co003.html",
+    "resolved": "https://www.valgourmand.com/43067-large_default/coca-cola-boite-33cl.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\coca-cola-33.jpg"
+  },
+  {
+    "id": "coca-cola-125",
+    "name": "Coca-Cola 1,25 L",
+    "source": "https://www.bruneau.fr/product/coca-cola-classic-1-25-l-12-bouteilles/704618",
+    "resolved": "https://prod.isg.bruneau.media/asset/aHR0cHM6Ly9icnVuZWF1LnNpbXBsZXdvcmtzcGFjZS5uZXQvZmlsZS9wdWJBc3NldEJhc2UvS2doNV9jaFg4c3NDVXF5ekJBNnNDQTdfejAyaDljVVZiZWpFU19kb0JJRTIwVV91bkg0LzE2MjM0MTY1NTUwMDAwL3MvNzA0NjE4LmpwZw==/?format=jpeg&height=477&quality=85&width=477",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\coca-cola-125.jpg"
+  },
+  {
+    "id": "coca-cherry-33",
+    "name": "Coca-Cola Cherry 33 cl",
+    "source": "https://www.valgourmand.com/4763-coca-cola-cherry-boite-33cl-ref-co001.html",
+    "resolved": "https://www.valgourmand.com/51390-large_default/coca-cola-cherry-boite-33cl.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\coca-cherry-33.jpg"
+  },
+  {
+    "id": "coca-zero-33",
+    "name": "Coca Zero 33 cl",
+    "source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSew_bKYD3yxeBQzgg9m4TywVqsEbvQ84s8CmwS8oLF4w&s=10",
+    "resolved": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSew_bKYD3yxeBQzgg9m4TywVqsEbvQ84s8CmwS8oLF4w&s=10",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\coca-zero-33.jpg"
+  },
+  {
+    "id": "coca-zero-125",
+    "name": "Coca-Cola Zero 1,25 L",
+    "source": "https://www.lcvtraiteur.fr/wp-content/uploads/2020/09/Coca-Cola-Zero-LCV-Traiteur.jpg",
+    "resolved": "https://www.lcvtraiteur.fr/wp-content/uploads/2020/09/Coca-Cola-Zero-LCV-Traiteur.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\coca-zero-125.jpg"
+  },
+  {
+    "id": "fanta-125",
+    "name": "Fanta 1,25 L",
+    "source": "https://festimoment.fr/wp-content/uploads/2024/02/Capture-decran-245-1.png",
+    "resolved": "https://festimoment.fr/wp-content/uploads/2024/02/Capture-decran-245-1.png",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\fanta-125.png"
+  },
+  {
+    "id": "oasis-tropical-33",
+    "name": "Oasis Tropical 33 cl",
+    "source": "https://www.bruneau.fr/product/oasis-tropical-33-cl-24-canettes/773850",
+    "resolved": "https://prod.isg.bruneau.media/asset/aHR0cHM6Ly9icnVuZWF1LnNpbXBsZXdvcmtzcGFjZS5uZXQvZmlsZS9wdWJBc3NldEJhc2UvS2doNV9jc0FWX1hOR1FmX3gxWDRtV3FzcmtxaTlNZ1liYjJKa3ktZ1RObC02WWMyMUFZLzE3Mjk2MDEwOTkwMDAwL3MvNzczODUwLmpwZw==/?format=jpeg&height=477&quality=85&width=477",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\oasis-tropical-33.jpg"
+  },
+  {
+    "id": "oasis-tropical-2l",
+    "name": "Oasis Tropical 2 L",
+    "source": "https://www.houra.fr/oasis-boisson-aux-fruits-tropical-2l/1353799/?srsltid=AfmBOoqOKE5MlNXFMRh_m00rgxPw3sUnL8di-giDf-D1Z-SG5Drvryvt",
+    "error": "aucune image trouvée sur https://www.houra.fr/oasis-boisson-aux-fruits-tropical-2l/1353799/?srsltid=AfmBOoqOKE5MlNXFMRh_m00rgxPw3sUnL8di-giDf-D1Z-SG5Drvryvt"
+  },
+  {
+    "id": "oasis-cassis-33",
+    "name": "Oasis Cassis 33 cl",
+    "source": "https://halalfs.com/boissons/5-oasis-pomme-cassis-framboise-24-x-33-cl.html",
+    "resolved": "https://halalfs.com/5-large_default/oasis-pomme-cassis-framboise-24-x-33-cl.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\oasis-cassis-33.jpg"
+  },
+  {
+    "id": "orangina-33",
+    "name": "Orangina 33 cl",
+    "source": "https://www.bieres64-40.fr/produit/orangina-33-cl/",
+    "resolved": "https://www.bieres64-40.fr/wp-content/uploads/2022/12/canette-orangina.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\orangina-33.jpg"
+  },
+  {
+    "id": "perrier-33",
+    "name": "Perrier 33 cl",
+    "source": "https://www.bieres64-40.fr/produit/perrier-33-cl/",
+    "resolved": "https://www.bieres64-40.fr/wp-content/uploads/2022/12/perrier33.png",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\perrier-33.png"
+  },
+  {
+    "id": "canada-dry-33",
+    "name": "Canada Dry 33 cl",
+    "source": "https://goapero.fr/produit/ginger-ale-canada-dry-33cl/?srsltid=AfmBOooeTzhlK3EtYteMnq9VUVF5hjzcs9gJZID0AL3kHoLINzC6V_mc",
+    "resolved": "https://goapero.fr/wp-content/uploads/2025/03/Ginger-Ale-CANADA-DRY-33cl.webp",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\canada-dry-33.webp"
+  },
+  {
+    "id": "tropico-33",
+    "name": "Tropico 33 cl",
+    "source": "https://www.valgourmand.com/4764-tropico-original-boite-33cl-ref-tr003.html",
+    "resolved": "https://www.valgourmand.com/51384-large_default/tropico-original-boite-33cl.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\tropico-33.jpg"
+  },
+  {
+    "id": "ice-tea-33",
+    "name": "Ice Tea 33 cl",
+    "source": "https://www.valgourmand.com/4026-lipton-ice-tea-peche-boite-33cl-ref-ic008.html",
+    "resolved": "https://www.valgourmand.com/34361-large_default/lipton-ice-tea-peche-boite-33cl.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\ice-tea-33.jpg"
+  },
+  {
+    "id": "lipton-ice-tea-125",
+    "name": "Lipton Ice Tea 1,25 L",
+    "source": "https://www.lcvtraiteur.fr/produit/ice-tea-1-litre/",
+    "resolved": "https://www.lcvtraiteur.fr/wp-content/uploads/2021/08/Design-sans-titre-17.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\lipton-ice-tea-125.jpg"
+  },
+  {
+    "id": "redbull-25",
+    "name": "Red Bull 25 cl",
+    "source": "https://toptanmarket.fr/produit/red-bull-boite-25clx24/",
+    "resolved": "https://toptanmarket.fr/wp-content/uploads/2020/11/24-x-33cl-Redbull-2.png",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\redbull-25.png"
+  },
+  {
+    "id": "eau-50",
+    "name": "Eau 50 cl",
+    "source": "https://www.manutan.fr/fr/maf/eau-de-source-cristaline-50cl?srsltid=AfmBOop6Crx1lRK42YtSMkJ5t-Y8_YPxaqSrqmORZeDu_GUTLjmFT8O2",
+    "resolved": "https://www.manutan.fr/img/S/GRP/IC/AIG18043929.jpg",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\eau-50.jpg"
+  },
+  {
+    "id": "eau-plate-150",
+    "name": "Eau plate 1,5 L",
+    "source": "https://www.fiducial-office-solutions.fr/palette-504-bouteilles-1-5-cristaline-p-132719.html?srsltid=AfmBOoqKvBtdA0L5Kor2iUPai2RIDcF21WnBQ0Vf7fG2jIL8LbBW4hWv",
+    "resolved": "https://www.fiducial-office-solutions.fr/INTERSHOP/static/WFS/FOS-FR-Site/-/FOS/fr_FR/Animation%20commerciale/2026/Big%20Menu/juin%202026/Bisilque_160x600%201x.webp",
+    "file": "C:\\Users\\hatim\\Downloads\\kabana-pizz\\public\\drinks\\eau-plate-150.webp"
+  }
+]
