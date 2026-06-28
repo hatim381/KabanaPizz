@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { drinks, upsellDrinkIds } from "../data/menu";
 import { useCart } from "./CartContext";
 import { buildWhatsappOrder } from "./whatsapp";
@@ -14,6 +14,15 @@ export default function CartDrawer() {
   const [note, setNote] = useState("");
 
   const empty = items.length === 0;
+
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   const hasFood = items.some((i) => !i.id.startsWith("drink-"));
   const hasDrink = items.some((i) => i.id.startsWith("drink-"));
@@ -60,88 +69,93 @@ export default function CartDrawer() {
           </div>
         ) : (
           <>
-            <div className="cart__items">
-              {items.map((i) => (
-                <div key={i.id} className="cart-item">
-                  <div className="cart-item__info">
-                    <span className="cart-item__name">{i.name}</span>
-                    <span className="cart-item__price">{euro(i.price)}</span>
-                  </div>
-                  <div className="cart-item__controls">
-                    <div className="qty">
-                      <button onClick={() => dec(i.id)} aria-label={`Retirer un ${i.name}`}>−</button>
-                      <span aria-live="polite">{i.qty}</span>
-                      <button onClick={() => inc(i.id)} aria-label={`Ajouter un ${i.name}`}>+</button>
+            <div className="cart__scroll">
+              <div className="cart__items">
+                {items.map((i) => (
+                  <div key={i.id} className="cart-item">
+                    <div className="cart-item__info">
+                      <span className="cart-item__name">{i.name}</span>
+                      <span className="cart-item__price">{euro(i.price)}</span>
                     </div>
-                    <span className="cart-item__subtotal">{euro(i.price * i.qty)}</span>
-                    <button
-                      className="cart-item__remove"
-                      onClick={() => remove(i.id)}
-                      aria-label={`Supprimer ${i.name}`}
-                    >
-                      🗑
-                    </button>
+                    <div className="cart-item__controls">
+                      <div className="qty">
+                        <button onClick={() => dec(i.id)} aria-label={`Retirer un ${i.name}`}>−</button>
+                        <span aria-live="polite">{i.qty}</span>
+                        <button onClick={() => inc(i.id)} aria-label={`Ajouter un ${i.name}`}>+</button>
+                      </div>
+                      <span className="cart-item__subtotal">{euro(i.price * i.qty)}</span>
+                      <button
+                        className="cart-item__remove"
+                        onClick={() => remove(i.id)}
+                        aria-label={`Supprimer ${i.name}`}
+                      >
+                        Supprimer
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {hasFood && !hasDrink && upsellDrinks.length > 0 && (
+                <div className="cart__upsell">
+                  <p className="cart__upsell-title">Complétez avec une boisson ?</p>
+                  <div className="cart__upsell-list">
+                    {upsellDrinks.map((d) => (
+                      <button
+                        key={d.id}
+                        type="button"
+                        className="cart__upsell-btn"
+                        onClick={() =>
+                          add({ id: `drink-${d.id}`, name: d.name, price: d.price })
+                        }
+                      >
+                        <span>{d.name}</span>
+                        <strong>{euro(d.price)}</strong>
+                      </button>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              )}
 
-            {hasFood && !hasDrink && upsellDrinks.length > 0 && (
-              <div className="cart__upsell">
-                <p className="cart__upsell-title">Complétez avec une boisson ?</p>
-                <div className="cart__upsell-list">
-                  {upsellDrinks.map((d) => (
-                    <button
-                      key={d.id}
-                      type="button"
-                      className="cart__upsell-btn"
-                      onClick={() =>
-                        add({ id: `drink-${d.id}`, name: d.name, price: d.price })
-                      }
-                    >
-                      <span>{d.name}</span>
-                      <strong>{euro(d.price)}</strong>
-                    </button>
-                  ))}
+              <div className="cart__form">
+                <div className="cart__mode" role="group" aria-label="Mode de retrait">
+                  <button
+                    className={`cart__mode-btn ${mode === "emporter" ? "is-active" : ""}`}
+                    onClick={() => setMode("emporter")}
+                  >
+                    À emporter
+                  </button>
+                  <button
+                    className={`cart__mode-btn ${mode === "place" ? "is-active" : ""}`}
+                    onClick={() => setMode("place")}
+                  >
+                    Sur place
+                  </button>
                 </div>
+
+                <details className="cart__extras">
+                  <summary>Nom et note (facultatif)</summary>
+                  <label className="cart__field">
+                    <span>Votre nom</span>
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Ex : Hatim"
+                    />
+                  </label>
+
+                  <label className="cart__field">
+                    <span>Note</span>
+                    <input
+                      type="text"
+                      value={note}
+                      onChange={(e) => setNote(e.target.value)}
+                      placeholder="Ex : pizza bien cuite, sans olives…"
+                    />
+                  </label>
+                </details>
               </div>
-            )}
-
-            <div className="cart__form">
-              <div className="cart__mode" role="group" aria-label="Mode de retrait">
-                <button
-                  className={`cart__mode-btn ${mode === "emporter" ? "is-active" : ""}`}
-                  onClick={() => setMode("emporter")}
-                >
-                  À emporter
-                </button>
-                <button
-                  className={`cart__mode-btn ${mode === "place" ? "is-active" : ""}`}
-                  onClick={() => setMode("place")}
-                >
-                  Sur place
-                </button>
-              </div>
-
-              <label className="cart__field">
-                <span>Votre nom (facultatif)</span>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Ex : Hatim"
-                />
-              </label>
-
-              <label className="cart__field">
-                <span>Note (facultatif)</span>
-                <input
-                  type="text"
-                  value={note}
-                  onChange={(e) => setNote(e.target.value)}
-                  placeholder="Ex : pizza bien cuite, sans olives…"
-                />
-              </label>
             </div>
 
             <footer className="cart__foot">

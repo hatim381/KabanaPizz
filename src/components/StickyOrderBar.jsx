@@ -15,15 +15,17 @@ export default function StickyOrderBar() {
         Menu
       </a>
       <button type="button" className="sticky-order__cart btn btn-primary" onClick={toggleCart}>
-        <span aria-hidden="true">🛒</span>
-        {count > 0 ? (
-          <>
-            Panier · <strong>{euro(total)}</strong>
-            <span className="sticky-order__badge">{count}</span>
-          </>
-        ) : (
-          "Commander"
-        )}
+        <span className="sticky-order__cart-icon" aria-hidden="true">🛒</span>
+        <span className="sticky-order__cart-text">
+          {count > 0 ? (
+            <>
+              Panier · <strong>{euro(total)}</strong>
+            </>
+          ) : (
+            "Voir le panier"
+          )}
+        </span>
+        {count > 0 && <span className="sticky-order__badge">{count}</span>}
       </button>
     </div>
   );
