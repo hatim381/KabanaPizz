@@ -17,11 +17,28 @@ export default function Reviews() {
           <div>
             <span className="eyebrow">Ce qu'on en dit</span>
             <h2 className="section-title">« Le repas des dieux »</h2>
+            <p className="reviews__summary">
+              <span className="reviews__score" aria-label="Note moyenne 4,8 sur 5">★ 4,8/5</span>
+              <span>· {reviews.length} avis clients · Google &amp; Facebook</span>
+            </p>
           </div>
           <div className="reviews__nav">
             <button className="reviews__arrow" aria-label="Avis précédent" onClick={() => go(-1)}>‹</button>
             <button className="reviews__arrow" aria-label="Avis suivant" onClick={() => go(1)}>›</button>
           </div>
+        </div>
+
+        <div className="reviews__grid">
+          {reviews.slice(0, 3).map((r, i) => (
+            <blockquote key={i} className="review review--card">
+              <div className="review__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <p className="review__text">{r.text}</p>
+              <footer className="review__foot">
+                <strong>{r.author}</strong>
+                <span className="review__source">via {r.source}</span>
+              </footer>
+            </blockquote>
+          ))}
         </div>
 
         <div className="reviews__stage">

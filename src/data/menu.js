@@ -252,6 +252,34 @@ export const pizzas = [
   },
 ];
 
+// Pizzas mises en avant (les plus commandées).
+export const bestSellerIds = ["kabana", "reine", "cannibale", "margherita"];
+
+// Boissons suggérées en upsell panier.
+export const upsellDrinkIds = ["coca-cola-33", "oasis-tropical-33", "eau-50"];
+
+export const trustPoints = [
+  { icon: "★", title: "4,8/5", text: "120+ avis Google & Facebook" },
+  { icon: "⏱", title: "15-20 min", text: "Préparation à emporter" },
+  { icon: "💳", title: "Au retrait", text: "Espèces ou carte sur place" },
+  { icon: "🛵", title: "Uber Eats", text: "Livraison dans le 77" },
+];
+
+export const faqItems = [
+  {
+    q: "Comment commander ?",
+    a: "Ajoutez vos produits au panier, validez sur WhatsApp, ou appelez directement le kiosque.",
+  },
+  {
+    q: "Paiement et livraison ?",
+    a: "Paiement au retrait sur place. Livraison possible via Uber Eats dans le secteur.",
+  },
+  {
+    q: "Délais de préparation ?",
+    a: "Comptez 15 à 20 minutes selon l'affluence. Commandez à l'avance par téléphone si vous êtes pressé.",
+  },
+];
+
 // Raccourcis d'ancrage vers les sections de la carte.
 export const menuShortcuts = [
   { href: "#menu-pizzas", label: "Pizzas" },

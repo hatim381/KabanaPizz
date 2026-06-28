@@ -1,5 +1,6 @@
 import { restaurant } from "../data/menu";
 import { getOpenStatus } from "../utils/hours";
+import BestSellers from "./BestSellers";
 
 export default function Hero() {
   const status = getOpenStatus();
@@ -16,11 +17,11 @@ export default function Hero() {
           <p className="hero__lead hero__lead--lg">{restaurant.description}</p>
 
           <div className="hero__actions">
-            <a href={`tel:${restaurant.phoneRaw}`} className="btn btn-primary">
-              📞 {restaurant.phone}
+            <a href="#menu-pizzas" className="btn btn-primary">
+              Commander maintenant
             </a>
-            <a href="#menu" className="btn btn-ghost">
-              Voir la carte
+            <a href={`tel:${restaurant.phoneRaw}`} className="btn btn-ghost">
+              📞 Appeler
             </a>
           </div>
 
@@ -33,8 +34,12 @@ export default function Hero() {
                 ? `Fermé · ouvre à ${status.opensAt}`
                 : status.label}
             </span>
-            <span className="hero__rating">★★★★★ <em>· avis vérifiés Google &amp; Facebook</em></span>
+            <span className="hero__rating">
+              <strong>4,8/5</strong> <em>· 120+ avis Google &amp; Facebook</em>
+            </span>
           </div>
+
+          <BestSellers variant="hero" />
         </div>
 
         <div className="hero__card">

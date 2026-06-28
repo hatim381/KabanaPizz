@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { drinks, upsellDrinkIds } from "../data/menu";
 import { useCart } from "./CartContext";
 import { buildWhatsappOrder } from "./whatsapp";
 
@@ -7,12 +8,18 @@ function euro(n) {
 }
 
 export default function CartDrawer() {
-  const { items, open, total, count, inc, dec, remove, clear, closeCart } = useCart();
+  const { items, open, total, count, inc, dec, remove, clear, closeCart, add } = useCart();
   const [mode, setMode] = useState("emporter");
   const [name, setName] = useState("");
   const [note, setNote] = useState("");
 
   const empty = items.length === 0;
+
+  const hasFood = items.some((i) => !i.id.startsWith("drink-"));
+  const hasDrink = items.some((i) => i.id.startsWith("drink-"));
+  const upsellDrinks = upsellDrinkIds
+    .map((id) => drinks.find((d) => d.id === id))
+    .filter(Boolean);
 
   const handleOrder = () => {
     if (empty) return;
@@ -78,6 +85,27 @@ export default function CartDrawer() {
                 </div>
               ))}
             </div>
+
+            {hasFood && !hasDrink && upsellDrinks.length > 0 && (
+              <div className="cart__upsell">
+                <p className="cart__upsell-title">Complétez avec une boisson ?</p>
+                <div className="cart__upsell-list">
+                  {upsellDrinks.map((d) => (
+                    <button
+                      key={d.id}
+                      type="button"
+                      className="cart__upsell-btn"
+                      onClick={() =>
+                        add({ id: `drink-${d.id}`, name: d.name, price: d.price })
+                      }
+                    >
+                      <span>{d.name}</span>
+                      <strong>{euro(d.price)}</strong>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="cart__form">
               <div className="cart__mode" role="group" aria-label="Mode de retrait">

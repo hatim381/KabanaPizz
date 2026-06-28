@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { pizzas, pizzaSizes, sides, drinks, formule, tagLabels, restaurant, menuShortcuts } from "../data/menu";
+import BestSellers from "./BestSellers";
 import { useReveal } from "../utils/useReveal";
 import { useCart } from "../cart/CartContext";
 
@@ -76,7 +77,7 @@ function PizzaCard({ pizza }) {
   const ingredientsDisplay = pizza.ingredients.map((i) => i.replace(/\s*halal/i, ""));
 
   return (
-    <article className={`pizza ${pizza.signature ? "pizza--signature" : ""}`}>
+    <article id={`pizza-${pizza.id}`} className={`pizza ${pizza.signature ? "pizza--signature" : ""}`}>
       <PizzaMedia pizza={pizza} isHalal={isHalal} />
       <div className="pizza__body">
         <div className="pizza__top">
@@ -165,6 +166,8 @@ export default function Menu() {
           </a>
         </header>
 
+        <BestSellers variant="menu" />
+
         <div className="menu__filters" role="tablist" aria-label="Filtrer les pizzas">
           {filters.map((f) => (
             <button
@@ -185,7 +188,8 @@ export default function Menu() {
           ))}
         </div>
 
-        <div className="formule">
+        <div className="formule formule--promo">
+          <span className="formule__promo-tag">Offre · midi &amp; soir</span>
           <ExtraMedia
             item={formule}
             fallback="🥪"

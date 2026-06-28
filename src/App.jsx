@@ -8,6 +8,8 @@ import Info from "./components/Info";
 import { Footer, CookieBanner } from "./components/Footer";
 import { CartProvider } from "./cart/CartContext";
 import CartDrawer, { CartToast } from "./cart/CartDrawer";
+import TrustBand from "./components/TrustBand";
+import StickyOrderBar from "./components/StickyOrderBar";
 import { restaurant, hours, pizzas, pizzaSizes } from "./data/menu";
 import "./App.css";
 
@@ -91,6 +93,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBand />
         <Menu />
         <Order />
         <Reviews />
@@ -99,6 +102,7 @@ export default function App() {
       <Footer />
       <CartDrawer />
       <CartToast />
+      <StickyOrderBar />
       <CookieBanner />
     </CartProvider>
   );
