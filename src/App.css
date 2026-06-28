@@ -291,11 +291,23 @@
 .extra:hover { transform: translateY(-3px); border-color: rgba(193, 80, 44, 0.4); }
 .extra__media { aspect-ratio: 4 / 3; overflow: hidden; position: relative; }
 .extra__img { width: 100%; height: 100%; object-fit: cover; }
-/* Harmonisation des photos boissons (sources variées) : tons et cadrage unifiés */
-.extra--drink .extra__media { background: var(--charcoal-2); }
-.extra--drink .extra__img {
+/* Harmonisation des photos boissons : fond clair homogène, visuel entier (contain) */
+.drink-card__media {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.drink-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
-  filter: contrast(1.03) brightness(1.02);
 }
 .extra__media-fallback {
   width: 100%;
@@ -591,6 +603,7 @@
   .extra__name { font-size: 0.6rem; line-height: 1.2; }
   .extra__price { font-size: 0.7rem; }
   .extra__add { margin: 0.25rem 0.35rem 0.4rem; font-size: 0.56rem; padding: 0.3em 0.3em; }
+  .drink-card__media { padding: 6px; border-radius: 8px; }
 }
 
 /* ===================== CART : boutons menu ===================== */

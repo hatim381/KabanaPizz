@@ -44,17 +44,17 @@ function PizzaMedia({ pizza, isHalal }) {
 }
 
 // Photo générique pour accompagnement / boisson, avec repli si absente.
-function ExtraMedia({ item, fallback, badge }) {
+function ExtraMedia({ item, fallback, badge, mediaClassName = "extra__media", imgClassName = "extra__img" }) {
   const [error, setError] = useState(false);
   const showImg = item.image && !error;
 
   return (
-    <div className="extra__media">
+    <div className={mediaClassName}>
       {showImg ? (
         <img
           src={item.image}
           alt={item.name}
-          className="extra__img"
+          className={imgClassName}
           loading="lazy"
           onError={() => setError(true)}
         />
@@ -224,7 +224,12 @@ export default function Menu() {
             <div className="extra__grid">
               {drinks.map((d) => (
                 <article key={d.id} className="extra extra--drink">
-                  <ExtraMedia item={d} fallback="🥤" />
+                  <ExtraMedia
+                    item={d}
+                    fallback="🥤"
+                    mediaClassName="extra__media drink-card__media"
+                    imgClassName="extra__img drink-card__img"
+                  />
                   <div className="extra__body">
                     <span className="extra__name">{d.name}</span>
                     <strong className="extra__price">{formatPrice(d.price)}</strong>
