@@ -1,4 +1,4 @@
-import { trustPoints, faqItems } from "../data/menu";
+import { trustPoints, faqItems, paymentMethods } from "../data/menu";
 
 export default function TrustBand() {
   return (
@@ -17,6 +17,9 @@ export default function TrustBand() {
             </li>
           ))}
         </ul>
+        <p className="trust__payments">
+          <strong>Moyens de paiement :</strong> {paymentMethods.join(" · ")}
+        </p>
         <div className="trust__faq">
           {faqItems.map((item) => (
             <details key={item.q} className="trust__item">

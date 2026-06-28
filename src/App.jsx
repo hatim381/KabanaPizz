@@ -9,7 +9,9 @@ import { Footer, CookieBanner } from "./components/Footer";
 import { CartProvider } from "./cart/CartContext";
 import CartDrawer, { CartToast } from "./cart/CartDrawer";
 import TrustBand from "./components/TrustBand";
+import MenuFirstScreen from "./components/MenuFirstScreen";
 import StickyOrderBar from "./components/StickyOrderBar";
+import FloatCartFab from "./components/FloatCartFab";
 import { restaurant, hours, pizzas, pizzaSizes } from "./data/menu";
 import "./App.css";
 
@@ -93,6 +95,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <MenuFirstScreen />
         <TrustBand />
         <Menu />
         <Order />
@@ -103,6 +106,7 @@ export default function App() {
       <CartDrawer />
       <CartToast />
       <StickyOrderBar />
+      <FloatCartFab />
       <CookieBanner />
     </CartProvider>
   );

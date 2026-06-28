@@ -258,10 +258,12 @@ export const bestSellerIds = ["kabana", "reine", "cannibale", "margherita"];
 // Boissons suggérées en upsell panier.
 export const upsellDrinkIds = ["coca-cola-33", "oasis-tropical-33", "eau-50"];
 
+export const paymentMethods = ["Espèces", "Carte bancaire", "Sans contact"];
+
 export const trustPoints = [
   { icon: "★", title: "4,8/5", text: "120+ avis Google & Facebook" },
   { icon: "⏱", title: "15-20 min", text: "Préparation à emporter" },
-  { icon: "💳", title: "Au retrait", text: "Espèces ou carte sur place" },
+  { icon: "💳", title: "Paiement", text: "Espèces, carte ou sans contact au retrait" },
   { icon: "🛵", title: "Uber Eats", text: "Livraison dans le 77" },
 ];
 

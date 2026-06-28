@@ -1,6 +1,5 @@
-import { restaurant } from "../data/menu";
+import { restaurant, pizzaSizes } from "../data/menu";
 import { getOpenStatus } from "../utils/hours";
-import BestSellers from "./BestSellers";
 
 export default function Hero() {
   const status = getOpenStatus();
@@ -14,14 +13,17 @@ export default function Hero() {
       <div className="wrap hero__inner">
         <div className="hero__content">
           <span className="eyebrow">Kiosque à pizza · Brie-Comte-Robert</span>
-          <p className="hero__lead hero__lead--lg">{restaurant.description}</p>
+          <p className="hero__lead hero__lead--lg">
+            Pizzas artisanales · pâte fraîche · dès{" "}
+            {pizzaSizes[0].price.toFixed(2).replace(".", ",")} €
+          </p>
 
           <div className="hero__actions">
-            <a href="#menu-pizzas" className="btn btn-primary">
-              Commander maintenant
+            <a href="#carte" className="btn btn-primary">
+              Voir le menu
             </a>
-            <a href={`tel:${restaurant.phoneRaw}`} className="btn btn-ghost">
-              📞 Appeler
+            <a href="#commander" className="btn btn-ghost">
+              Commander
             </a>
           </div>
 
@@ -39,7 +41,9 @@ export default function Hero() {
             </span>
           </div>
 
-          <BestSellers variant="hero" />
+          <p className="hero__hint">
+            Menu, panier et commande WhatsApp ci-dessous ↓
+          </p>
         </div>
 
         <div className="hero__card">

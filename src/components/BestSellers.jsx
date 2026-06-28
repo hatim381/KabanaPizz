@@ -13,24 +13,27 @@ const bestSellers = bestSellerIds
 export default function BestSellers({ variant = "menu" }) {
   const { add } = useCart();
   const defaultSize = pizzaSizes[0];
-  const isHero = variant === "hero";
+  const isFirstScreen = variant === "firstscreen";
 
   return (
     <div className={`bestsellers bestsellers--${variant}`}>
-      {!isHero && (
+      {variant === "menu" && (
         <div className="bestsellers__head">
           <h3 className="bestsellers__title">Les plus commandées</h3>
           <p className="bestsellers__lead">Choix rapide — ajoutez en un clic, taille {defaultSize.label}.</p>
         </div>
       )}
-      {isHero && <p className="bestsellers__hero-label">Top ventes · dès {formatPrice(defaultSize.price)}</p>}
+      {isFirstScreen && (
+        <p className="bestsellers__firstscreen-label">Top ventes · taille {defaultSize.label}</p>
+      )}
       <div className="bestsellers__grid" role="list">
         {bestSellers.map((pizza) => (
           <BestSellerCard
             key={pizza.id}
             pizza={pizza}
             size={defaultSize}
-            compact={isHero}
+            compact={false}
+            prominent={isFirstScreen}
             onAdd={() =>
               add({
                 id: `${pizza.id}-${defaultSize.id}`,
@@ -45,11 +48,14 @@ export default function BestSellers({ variant = "menu" }) {
   );
 }
 
-function BestSellerCard({ pizza, size, compact, onAdd }) {
+function BestSellerCard({ pizza, size, compact, prominent, onAdd }) {
   const [error, setError] = useState(false);
 
   return (
-    <article className={`bestseller-card ${compact ? "bestseller-card--compact" : ""}`} role="listitem">
+    <article
+      className={`bestseller-card ${compact ? "bestseller-card--compact" : ""} ${prominent ? "bestseller-card--prominent" : ""}`}
+      role="listitem"
+    >
       <a href={`#pizza-${pizza.id}`} className="bestseller-card__media">
         {pizza.image && !error ? (
           <img
@@ -70,20 +76,26 @@ function BestSellerCard({ pizza, size, compact, onAdd }) {
           {pizza.name}
         </a>
         {!compact && (
-          <p className="bestseller-card__ingredients">
-            {pizza.ingredients.slice(0, 4).join(" · ")}
-            {pizza.ingredients.length > 4 ? "…" : ""}
-          </p>
+          <>
+            <p className="bestseller-card__base">{pizza.base}</p>
+            <p className="bestseller-card__ingredients">
+              {pizza.ingredients.slice(0, 5).join(" · ")}
+              {pizza.ingredients.length > 5 ? "…" : ""}
+            </p>
+          </>
         )}
         <div className="bestseller-card__foot">
-          <span className="bestseller-card__price">{formatPrice(size.price)}</span>
+          <span className="bestseller-card__price">
+            {formatPrice(size.price)}
+            <small>{size.label}</small>
+          </span>
           <button
             type="button"
             className="bestseller-card__add"
             onClick={onAdd}
             aria-label={`Ajouter ${pizza.name} ${size.label} au panier`}
           >
-            {compact ? "+" : "Ajouter"}
+            {prominent ? "Ajouter au panier" : compact ? "+" : "Ajouter"}
           </button>
         </div>
       </div>

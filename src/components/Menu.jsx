@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { pizzas, pizzaSizes, sides, drinks, formule, tagLabels, restaurant, menuShortcuts } from "../data/menu";
-import BestSellers from "./BestSellers";
+
 import { useReveal } from "../utils/useReveal";
 import { useCart } from "../cart/CartContext";
 
@@ -165,8 +165,6 @@ export default function Menu() {
             ⤓ Flyer PDF
           </a>
         </header>
-
-        <BestSellers variant="menu" />
 
         <div className="menu__filters" role="tablist" aria-label="Filtrer les pizzas">
           {filters.map((f) => (

@@ -68,7 +68,8 @@ export default function Navbar() {
             aria-label={`Ouvrir le panier${count > 0 ? `, ${count} article${count > 1 ? "s" : ""}` : ""}`}
           >
             <span className="nav__cart-icon" aria-hidden="true">🛒</span>
-            {count > 0 && <span className="nav__cart-badge">{count}</span>}
+            <span className="nav__cart-label">Panier{count > 0 ? ` (${count})` : ""}</span>
+            {count > 0 && <span className="nav__cart-badge" aria-hidden="true">{count}</span>}
           </button>
           <button
             className="nav__burger"
