@@ -252,11 +252,18 @@ export const pizzas = [
   },
 ];
 
+// Raccourcis d'ancrage vers les sections de la carte.
+export const menuShortcuts = [
+  { href: "#menu-pizzas", label: "Pizzas" },
+  { href: "#menu-accompagnements", label: "Accompagnements" },
+  { href: "#menu-boissons", label: "Boissons" },
+];
+
 // Accompagnements — prix unique TTC.
 // Photos : déposez un fichier nommé d'après l'`id` dans public/sides/.
 export const sides = [
   { id: "cheesy-bread", name: "Cheesy bread", price: 5, image: "/sides/cheesy-bread.jpg" },
-  { id: "chicken-wings", name: "Chicken wings (6 pièces)", price: 5, image: "/sides/chicken-wings.jpg" },
+  { id: "chicken-wings", name: "Chicken wings (6 pièces)", price: 5, image: "/sides/chicken-wings.png" },
   { id: "chickeninos", name: "Chickeninos (6 pièces)", price: 5, image: "/sides/chickeninos.jpg" },
   { id: "potatoes", name: "Potatoes (300 g)", price: 5, image: "/sides/potatoes.jpg" },
   { id: "brownie", name: "Brownie chocolat", price: 2, image: "/sides/brownie.jpg" },

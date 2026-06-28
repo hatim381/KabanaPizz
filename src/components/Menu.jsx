@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { pizzas, pizzaSizes, sides, drinks, formule, tagLabels, restaurant } from "../data/menu";
+import { pizzas, pizzaSizes, sides, drinks, formule, tagLabels, restaurant, menuShortcuts } from "../data/menu";
 import { useReveal } from "../utils/useReveal";
 import { useCart } from "../cart/CartContext";
 
@@ -136,7 +136,18 @@ export default function Menu() {
 
   return (
     <section id="menu">
+      <nav className="menu-shortcuts" aria-label="Sections de la carte">
+        <div className="wrap menu-shortcuts__inner">
+          {menuShortcuts.map((item) => (
+            <a key={item.href} href={item.href} className="menu-shortcuts__link">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <div ref={ref} className={`wrap reveal ${visible ? "is-visible" : ""}`}>
+        <div id="menu-pizzas" className="menu__section">
         <header className="menu__head">
           <div>
             <span className="eyebrow">La carte</span>
@@ -195,9 +206,10 @@ export default function Menu() {
             </button>
           </div>
         </div>
+        </div>
 
         <div className="extras">
-          <div className="extras__block">
+          <div id="menu-accompagnements" className="extras__block menu__section">
             <h3 className="drinks__title">Accompagnements</h3>
             <div className="extra__grid">
               {sides.map((s) => (
@@ -219,7 +231,7 @@ export default function Menu() {
             </div>
           </div>
 
-          <div className="extras__block">
+          <div id="menu-boissons" className="extras__block menu__section">
             <h3 className="drinks__title">Boissons</h3>
             <div className="extra__grid">
               {drinks.map((d) => (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { restaurant } from "../data/menu";
+import { restaurant, menuShortcuts } from "../data/menu";
 import { getOpenStatus } from "../utils/hours";
 import { useCart } from "../cart/CartContext";
 
@@ -21,7 +21,7 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { href: "#menu", label: "La carte" },
+    ...menuShortcuts,
     { href: "#commander", label: "Commander" },
     { href: "#avis", label: "Avis" },
     { href: "#infos", label: "Infos" },
