@@ -11,8 +11,8 @@ export function Footer() {
         </div>
         <div className="footer__col">
           <h4>Aller à</h4>
-          <a href="#menu">La carte</a>
-          <a href="#commander">Commander</a>
+          <a href="#carte">La carte</a>
+          <a href="#carte">Commander</a>
           <a href="#avis">Avis</a>
           <a href="#infos">Infos</a>
         </div>

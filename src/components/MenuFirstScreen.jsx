@@ -31,8 +31,6 @@ export default function MenuFirstScreen() {
           </a>
         </header>
 
-        <BestSellers variant="firstscreen" />
-
         <p className="menu-first__tunnel">
           <span>1. Ajouter au panier</span>
           <span aria-hidden="true">→</span>
@@ -40,6 +38,8 @@ export default function MenuFirstScreen() {
           <span aria-hidden="true">→</span>
           <span>3. Commander sur WhatsApp</span>
         </p>
+
+        <BestSellers variant="firstscreen" />
       </div>
     </section>
   );

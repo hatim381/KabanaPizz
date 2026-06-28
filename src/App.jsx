@@ -96,8 +96,8 @@ export default function App() {
       <main>
         <Hero />
         <MenuFirstScreen />
-        <TrustBand />
         <Menu />
+        <TrustBand />
         <Order />
         <Reviews />
         <Info />

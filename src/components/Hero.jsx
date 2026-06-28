@@ -1,8 +1,11 @@
 import { restaurant, pizzaSizes } from "../data/menu";
 import { getOpenStatus } from "../utils/hours";
+import { useCart } from "../cart/CartContext";
 
 export default function Hero() {
   const status = getOpenStatus();
+  const { toggleCart } = useCart();
+  const fromPrice = pizzaSizes[0].price.toFixed(2).replace(".", ",") + " €";
 
   return (
     <section className="hero" id="top">
@@ -14,17 +17,16 @@ export default function Hero() {
         <div className="hero__content">
           <span className="eyebrow">Kiosque à pizza · Brie-Comte-Robert</span>
           <p className="hero__lead hero__lead--lg">
-            Pizzas artisanales · pâte fraîche · dès{" "}
-            {pizzaSizes[0].price.toFixed(2).replace(".", ",")} €
+            Pizzas artisanales · pâte fraîche · dès {fromPrice}
           </p>
 
           <div className="hero__actions">
             <a href="#carte" className="btn btn-primary">
               Voir le menu
             </a>
-            <a href="#commander" className="btn btn-ghost">
+            <button type="button" className="btn btn-ghost" onClick={toggleCart}>
               Commander
-            </a>
+            </button>
           </div>
 
           <div className="hero__meta">
@@ -58,7 +60,7 @@ export default function Hero() {
           </div>
           <div className="hero__price-tag" aria-hidden="true">
             <span>dès</span>
-            <strong>10 €</strong>
+            <strong>{fromPrice}</strong>
           </div>
         </div>
       </div>

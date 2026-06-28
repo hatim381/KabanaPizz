@@ -22,7 +22,7 @@ export default function Navbar() {
 
   const links = [
     ...menuShortcuts,
-    { href: "#commander", label: "Commander" },
+    { href: "#carte", label: "Commander" },
     { href: "#avis", label: "Avis" },
     { href: "#infos", label: "Infos" },
   ];

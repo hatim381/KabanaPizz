@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { pizzas, pizzaSizes, sides, drinks, formule, tagLabels, restaurant, menuShortcuts } from "../data/menu";
+import { pizzas, pizzaSizes, sides, drinks, formule, tagLabels, restaurant } from "../data/menu";
 
 import { useReveal } from "../utils/useReveal";
 import { useCart } from "../cart/CartContext";
@@ -137,16 +137,6 @@ export default function Menu() {
 
   return (
     <section id="menu">
-      <nav className="menu-shortcuts" aria-label="Sections de la carte">
-        <div className="wrap menu-shortcuts__inner">
-          {menuShortcuts.map((item) => (
-            <a key={item.href} href={item.href} className="menu-shortcuts__link">
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </nav>
-
       <div ref={ref} className={`wrap reveal ${visible ? "is-visible" : ""}`}>
         <div id="menu-pizzas" className="menu__section">
         <header className="menu__head">
